@@ -40,7 +40,7 @@ export default function TermsPage() {
             </h2>
             <p>
               You agree to provide accurate and complete information about your
-              parents' health and living situation. You are responsible for ensuring
+              parents&apos; health and living situation. You are responsible for ensuring
               that we have up-to-date emergency contact details.
             </p>
           </section>

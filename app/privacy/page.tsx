@@ -15,7 +15,7 @@ export default function PrivacyPage() {
               1. Introduction
             </h2>
             <p>
-              At Roots & Care ("we," "our," or "us"), we value your trust. This
+              At Roots &amp; Care (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), we value your trust. This
               Privacy Policy explains how we collect, use, and protect your
               personal information when you use our website and services. By
               engaging with us, you agree to the practices described in this
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
                 phone number, and location.
               </li>
               <li>
-                <strong>Care Details:</strong> Information about your parents'
+                <strong>Care Details:</strong> Information about your parents&apos;
                 living situation, medical needs, and specific concerns.
               </li>
               <li>
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
               4. Data Protection
             </h2>
             <p>
-              We treat your family's data with the highest confidentiality. We do
+              We treat your family&apos;s data with the highest confidentiality. We do
               not sell, trade, or rent your personal information to third
               parties. Access to your data is restricted to our core team and
               necessary medical partners (e.g., doctors) only when required for
