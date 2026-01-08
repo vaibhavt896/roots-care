@@ -290,6 +290,15 @@ p {
     100% { transform: translateX(-50%); }
   }
 
+  @keyframes shimmer {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+
   /* Visual Image Section */
   .visual-section {
     position: relative;

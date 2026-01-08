@@ -47,34 +47,27 @@ export default function SmartFixedCTA() {
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
           className="md:hidden fixed bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-auto"
         >
-          <motion.div
-            animate={{ 
-              boxShadow: [
-                "0 4px 15px rgba(212, 175, 55, 0.3)",
-                "0 4px 30px rgba(212, 175, 55, 0.6)",
-                "0 4px 15px rgba(212, 175, 55, 0.3)"
-              ]
-            }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="rounded-full"
-          >
-            <Link
-              href="/contact"
-              className="flex items-center gap-2 bg-gradient-to-r from-[var(--gold-rich)] to-[#c99c2e] text-black font-bold text-[11px] uppercase tracking-wider py-3 px-6 rounded-full border border-white/20 relative overflow-hidden group whitespace-nowrap"
+            <motion.div
+              whileTap={{ scale: 0.95 }}
+              className="rounded-full"
             >
-              {/* Animated Shimmer Overlay */}
-              <motion.div 
-                className="absolute inset-0 bg-white/20 -skew-x-12"
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-              />
-              
-              <span className="relative z-10">Book Visit</span>
-              <svg className="relative z-10 w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
-          </motion.div>
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 bg-gradient-to-r from-[var(--gold-rich)] to-[#c99c2e] text-black font-bold text-[11px] uppercase tracking-wider py-3 px-6 rounded-full border border-white/20 relative overflow-hidden group whitespace-nowrap"
+              >
+                {/* Animated Shimmer Overlay */}
+                <motion.div 
+                  className="absolute inset-0 bg-white/20 -skew-x-12"
+                  animate={{ x: ["-100%", "200%"] }}
+                  transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+                />
+                
+                <span className="relative z-10">Book Visit</span>
+                <svg className="relative z-10 w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+            </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

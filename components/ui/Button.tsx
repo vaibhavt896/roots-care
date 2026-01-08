@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline" | "ghost";
@@ -8,9 +9,14 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", ...props }, ref) => {
+    // Separate motion-specific props if needed, but here we just need to ensure the spread is safe.
+    // The error is caused by a conflict between standard button props and motion button props (like onAnimationStart).
+    const { onAnimationStart, onDragStart, onDragEnd, onDrag, ...safeProps } = props as any;
+
     return (
-      <button
+      <motion.button
         ref={ref}
+        whileTap={{ scale: 0.95 }}
         className={cn(
           "inline-flex items-center justify-center rounded-2xl font-semibold transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--gold-rich)] disabled:pointer-events-none disabled:opacity-50",
           {
@@ -28,7 +34,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           },
           className
         )}
-        {...props}
+        {...safeProps}
       />
     );
   }

@@ -21,9 +21,42 @@ export default function TrustSection() {
       ref={containerRef} 
       className="container section-spacing relative flex flex-col items-center justify-center text-center overflow-hidden min-h-[60vh] !mt-0 !pt-0"
     >
-        {/* Background Atmosphere - A glowing "heart" for the section */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-[600px] h-[600px] bg-[var(--gold-rich)] opacity-5 blur-[120px] rounded-full" />
+        {/* Background Atmosphere - Cinematic Moving Spotlight */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Primary Moving Light - Gold */}
+            <motion.div 
+                animate={{ 
+                    x: ["-20%", "20%", "-20%"],
+                    y: ["-10%", "10%", "-10%"],
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{ 
+                    duration: 15, 
+                    repeat: Infinity, 
+                    ease: "easeInOut" 
+                }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--gold-rich)] blur-[150px] rounded-full mix-blend-screen will-change-transform"
+            />
+            
+            {/* Secondary Ambient Light - Deep Warmth */}
+            <motion.div 
+                animate={{ 
+                    x: ["20%", "-20%", "20%"],
+                    scale: [1.2, 1, 1.2],
+                    opacity: [0.2, 0.4, 0.2]
+                }}
+                transition={{ 
+                    duration: 20, 
+                    repeat: Infinity, 
+                    ease: "easeInOut",
+                    delay: 2
+                }}
+                className="absolute top-1/3 left-1/3 w-[800px] h-[800px] bg-[var(--gold-deep)]/20 blur-[180px] rounded-full mix-blend-screen will-change-transform" 
+            />
+            
+            {/* Subtle Noise Texture overlay is handled globally, but we add a local vignette */}
+            <div className="absolute inset-0 bg-radial-gradient from-transparent to-black/80" />
         </div>
         
         {/* Content Wrapper that holds both the Border and Text */}

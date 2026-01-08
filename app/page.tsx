@@ -9,7 +9,6 @@ import TrustSection from "../components/TrustSection";
 import TrustTicker from "../components/TrustTicker";
 import DailyReportSection from "../components/DailyReportSection";
 import TestimonialSection from "../components/TestimonialSection";
-import SmartFixedCTA from "../components/SmartFixedCTA";
 
 export const metadata = {
   title: "Trusted Elder Care in Kanpur for NRIs",
@@ -54,9 +53,6 @@ export default function Home() {
 
       {/* FINAL CTA - EMOTIONAL CLOSE & FOOTER */}
       <FinalCTA />
-      
-      {/* Smart Fixed CTA for Mobile */}
-      <SmartFixedCTA />
     </main>
   );
 }

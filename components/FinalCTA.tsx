@@ -82,15 +82,25 @@ export default function FinalCTA() {
           </div>
         </motion.div>
 
-        {/* Footer Bottom Links */}
-        <div className="mt-32 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-          <div className="mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Roots & Care. Built with responsibility.
+        {/* Footer Bottom Links - Ultra Premium Mobile Optimized */}
+        <div className="mt-20 md:mt-32 pt-8 md:pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0">
+          
+          {/* Links - Mobile: Stacked/Spacious, Desktop: Horizontal */}
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 order-1 md:order-2">
+            <Link href="/privacy" className="text-xs md:text-sm uppercase tracking-[0.2em] text-gray-500 hover:text-[var(--gold-rich)] transition-colors duration-300">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-xs md:text-sm uppercase tracking-[0.2em] text-gray-500 hover:text-[var(--gold-rich)] transition-colors duration-300">
+              Terms of Service
+            </Link>
+            <Link href="mailto:rootsandcare@gmail.com" className="text-xs md:text-sm uppercase tracking-[0.2em] text-gray-500 hover:text-[var(--gold-rich)] transition-colors duration-300">
+              Contact Support
+            </Link>
           </div>
-          <div className="flex gap-8">
-            <Link href="/privacy" className="hover:text-[var(--gold-rich)] transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-[var(--gold-rich)] transition-colors">Terms of Service</Link>
-            <Link href="mailto:rootsandcare@gmail.com" className="hover:text-[var(--gold-rich)] transition-colors">Contact Support</Link>
+
+          {/* Copyright - Subtler */}
+          <div className="text-gray-600 text-[10px] md:text-xs uppercase tracking-widest order-2 md:order-1 font-medium opacity-60">
+            &copy; {new Date().getFullYear()} Roots & Care. Built with responsibility.
           </div>
         </div>
       </div>

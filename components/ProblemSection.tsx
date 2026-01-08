@@ -73,79 +73,138 @@ export default function ProblemSection() {
             </p>
             
             <div className="pt-8 pb-24">
-              <Link 
-                href="/contact" 
-                className="main-cta btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg shadow-lg hover:shadow-[var(--gold-rich)]/20 transition-all duration-300"
-              >
-                {CONTENT.problem.cta}
-              </Link>
+              <motion.div whileTap={{ scale: 0.95 }} className="inline-block">
+                <Link 
+                  href="/contact" 
+                  className="main-cta btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg shadow-lg hover:shadow-[var(--gold-rich)]/20 transition-all duration-300"
+                >
+                  {CONTENT.problem.cta}
+                </Link>
+              </motion.div>
             </div>
           </div>
         </motion.div>
 
-        {/* Stats Column - Simplified on mobile */}
-        <div className="flex flex-col gap-4 md:gap-6">
-            {/* Stat 1 */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="group relative"
-          >
-            <div className="absolute inset-0 bg-[var(--gold-rich)]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl hover:border-[var(--gold-rich)]/40 transition-colors duration-300">
-                <div className="flex items-baseline gap-1 mb-1 md:mb-2">
-                    <span className="text-5xl md:text-6xl font-playfair font-bold text-white">
-                        <Counter from={0} to={Number(CONTENT.problem.stats.anxiety.value)} />{CONTENT.problem.stats.anxiety.unit}
-                    </span>
-                </div>
-                <p className="text-gray-400 text-xs md:text-sm tracking-widest uppercase font-medium border-t border-white/10 pt-3 md:pt-4 mt-2">
-                  {CONTENT.problem.stats.anxiety.label}
-                </p>
-            </div>
-          </motion.div>
+        {/* Stats Column - Horizontal Scroll on Mobile (Premium UX) */}
+        <div className="relative">
+          <div className="flex flex-row md:flex-col overflow-x-auto md:overflow-visible snap-x md:snap-none snap-mandatory gap-4 md:gap-6 pb-8 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+              {/* Stat 1 */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              animate={{ y: [0, -8, 0] }} // Floating effect
+              // @ts-ignore - transition prop type mismatch with simple animation
+              transition={{
+                y: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0 }
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative min-w-[85vw] md:min-w-0 snap-center overflow-hidden rounded-2xl"
+            >
+              <div className="absolute inset-0 bg-[var(--gold-rich)]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl hover:border-[var(--gold-rich)]/40 transition-colors duration-300 h-full flex flex-col justify-center overflow-hidden">
+                  {/* Continuous Sheen Effect */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"
+                    animate={{ x: ["-100%", "200%"] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
+                  />
 
-          {/* Stat 2 */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="group relative"
-          >
-             <div className="absolute inset-0 bg-[var(--gold-rich)]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-             <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-[var(--gold-rich)]/40 transition-colors duration-300">
-                <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-6xl font-playfair font-bold text-white">{CONTENT.problem.stats.aloneTime.value}</span>
-                    <span className="text-2xl text-[var(--gold-champagne)] font-medium">{CONTENT.problem.stats.aloneTime.unit}</span>
-                </div>
-                <p className="text-gray-400 text-sm tracking-widest uppercase font-medium border-t border-white/10 pt-4 mt-2">
-                  {CONTENT.problem.stats.aloneTime.label}
-                </p>
-            </div>
-          </motion.div>
+                  <div className="flex items-baseline gap-1 mb-2 relative z-10">
+                      <span className="text-5xl md:text-6xl font-playfair font-bold text-white">
+                          <Counter from={0} to={Number(CONTENT.problem.stats.anxiety.value)} />{CONTENT.problem.stats.anxiety.unit}
+                      </span>
+                  </div>
+                  <p className="text-gray-400 text-xs md:text-sm tracking-widest uppercase font-medium border-t border-white/10 pt-3 md:pt-4 mt-2 relative z-10">
+                    {CONTENT.problem.stats.anxiety.label}
+                  </p>
+              </div>
+            </motion.div>
 
-          {/* Stat 3 */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="group relative"
+            {/* Stat 2 */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              animate={{ y: [0, -8, 0] }}
+              // @ts-ignore
+              transition={{
+                y: { duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative min-w-[85vw] md:min-w-0 snap-center overflow-hidden rounded-2xl"
+            >
+              <div className="absolute inset-0 bg-[var(--gold-rich)]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl hover:border-[var(--gold-rich)]/40 transition-colors duration-300 h-full flex flex-col justify-center overflow-hidden">
+                  {/* Continuous Sheen Effect */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"
+                    animate={{ x: ["-100%", "200%"] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "linear", repeatDelay: 1.5 }}
+                  />
+
+                  <div className="flex items-baseline gap-2 mb-2 relative z-10">
+                      <span className="text-5xl md:text-6xl font-playfair font-bold text-white">{CONTENT.problem.stats.aloneTime.value}</span>
+                      <span className="text-xl md:text-2xl text-[var(--gold-champagne)] font-medium">{CONTENT.problem.stats.aloneTime.unit}</span>
+                  </div>
+                  <p className="text-gray-400 text-xs md:text-sm tracking-widest uppercase font-medium border-t border-white/10 pt-3 md:pt-4 mt-2 relative z-10">
+                    {CONTENT.problem.stats.aloneTime.label}
+                  </p>
+              </div>
+            </motion.div>
+
+            {/* Stat 3 */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              animate={{ y: [0, -8, 0] }}
+              // @ts-ignore
+              transition={{
+                y: { duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="group relative min-w-[85vw] md:min-w-0 snap-center overflow-hidden rounded-2xl"
+            >
+              <div className="absolute inset-0 bg-[var(--gold-rich)]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl hover:border-[var(--gold-rich)]/40 transition-colors duration-300 h-full flex flex-col justify-center overflow-hidden">
+                  {/* Continuous Sheen Effect */}
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"
+                    animate={{ x: ["-100%", "200%"] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: "linear", repeatDelay: 2 }}
+                  />
+
+                  <div className="flex items-baseline gap-2 mb-2 relative z-10">
+                      <span className="text-5xl md:text-6xl font-playfair font-bold text-white">
+                          <Counter from={0} to={Number(CONTENT.problem.stats.emergency.value)} />{CONTENT.problem.stats.emergency.unit}
+                      </span>
+                      <span className="text-xl md:text-2xl text-[var(--gold-champagne)] font-medium">{CONTENT.problem.stats.emergency.unitLabel}</span>
+                  </div>
+                  <p className="text-gray-400 text-xs md:text-sm tracking-widest uppercase font-medium border-t border-white/10 pt-3 md:pt-4 mt-2 relative z-10">
+                    {CONTENT.problem.stats.emergency.label}
+                  </p>
+              </div>
+            </motion.div>
+          </div>
+          
+          {/* Mobile Swipe Indicator */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.6 }}
+            transition={{ delay: 1 }}
+            className="md:hidden absolute bottom-0 left-0 right-0 flex justify-center items-center gap-2 text-[10px] uppercase tracking-widest text-[var(--gold-rich)] pointer-events-none"
           >
-             <div className="absolute inset-0 bg-[var(--gold-rich)]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-             <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-[var(--gold-rich)]/40 transition-colors duration-300">
-                <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-6xl font-playfair font-bold text-white">
-                        <Counter from={0} to={Number(CONTENT.problem.stats.emergency.value)} />{CONTENT.problem.stats.emergency.unit}
-                    </span>
-                    <span className="text-2xl text-[var(--gold-champagne)] font-medium">{CONTENT.problem.stats.emergency.unitLabel}</span>
-                </div>
-                <p className="text-gray-400 text-sm tracking-widest uppercase font-medium border-t border-white/10 pt-4 mt-2">
-                  {CONTENT.problem.stats.emergency.label}
-                </p>
-            </div>
+            <span>Swipe</span>
+            <motion.span 
+              animate={{ x: [0, 5, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5 }}
+            >
+              →
+            </motion.span>
           </motion.div>
         </div>
       </div>
