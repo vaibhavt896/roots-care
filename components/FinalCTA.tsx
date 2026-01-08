@@ -55,7 +55,7 @@ export default function FinalCTA() {
           <div className="flex flex-col items-center gap-12">
             <Link 
               href="/contact" 
-              className="group relative inline-flex items-center justify-center px-12 py-6 text-lg font-bold text-black bg-gradient-to-r from-[var(--gold-rich)] to-[#c99c2e] rounded-full overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]"
+              className="main-cta group relative inline-flex items-center justify-center px-12 py-6 text-lg font-bold text-black bg-gradient-to-r from-[var(--gold-rich)] to-[#c99c2e] rounded-full overflow-hidden transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(212,175,55,0.4)]"
             >
               <span className="relative z-10 flex items-center gap-2">
                 {CONTENT.cta.button}

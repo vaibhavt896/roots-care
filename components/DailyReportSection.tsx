@@ -67,20 +67,20 @@ export default function DailyReportSection() {
         </motion.div>
 
         {/* Visual Side - The Phone Mockup */}
-        <div className="relative flex justify-center">
+        <div className="relative flex justify-center mt-8 lg:mt-0">
           {/* Glow behind phone */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[500px] bg-[var(--gold-rich)]/10 blur-[80px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[300px] h-[400px] md:h-[500px] bg-[var(--gold-rich)]/10 blur-[80px] rounded-full pointer-events-none" />
 
           {/* Phone Frame */}
-          <div className="relative w-[320px] h-[600px] bg-black border-4 border-[#333] rounded-[40px] shadow-2xl overflow-hidden z-10">
+          <div className="relative w-[280px] md:w-[320px] h-[550px] md:h-[600px] bg-black border-4 border-[#333] rounded-[32px] md:rounded-[40px] shadow-2xl overflow-hidden z-10">
             {/* Dynamic Island / Notch */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-xl z-20" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 md:w-32 h-5 md:h-6 bg-black rounded-b-xl z-20" />
             
             {/* Screen Content */}
             <div className="w-full h-full bg-[#0a0a0a] flex flex-col font-sans">
               
               {/* Chat Header */}
-              <div className="px-4 pt-12 pb-4 bg-[#111] border-b border-white/10 flex items-center gap-3">
+              <div className="px-4 pt-10 md:pt-12 pb-3 md:pb-4 bg-[#111] border-b border-white/10 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--gold-rich)] to-[var(--gold-deep)] flex items-center justify-center text-[10px] text-black font-bold">
                   RC
                 </div>

@@ -37,13 +37,13 @@ export default function SolutionSection() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="solution-image-col"
         >
-          <div className="solution-image-wrapper">
+          <div className="solution-image-wrapper max-h-[400px] md:max-h-none">
             <Image
               src="/elder-happy-couple.png"
               alt="Happy elderly couple cared for by Roots & Care"
               width={450}
               height={600}
-              className="solution-image"
+              className="solution-image object-cover h-full w-full"
               priority
             />
             <div className="image-gold-border"></div>
@@ -52,7 +52,7 @@ export default function SolutionSection() {
       </div>
 
       {/* The 3 Value Cards */}
-      <div className="grid-3" style={{ marginTop: "200px" }}>
+      <div className="grid-3 mt-24 lg:mt-48">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

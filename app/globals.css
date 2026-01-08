@@ -24,8 +24,11 @@
   --ease-luxury: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+html,
 body {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
   background: radial-gradient(
     circle at top,
     var(--black-sepia),
@@ -35,6 +38,7 @@ body {
   font-family: var(--font-inter), system-ui, sans-serif;
   line-height: 1.7;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Noise Texture Overlay */
@@ -61,7 +65,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(42px, 6vw, 64px);
+  font-size: clamp(32px, 6vw, 64px);
   line-height: 0.95;
 }
 
@@ -106,7 +110,7 @@ p {
   }
 
   .container {
-    @apply max-w-[1180px] mx-auto px-7;
+    @apply w-full max-w-[1180px] mx-auto px-4 md:px-7;
   }
 
   .grid-2 {
@@ -261,25 +265,7 @@ p {
   }
 
   /* Trust Ticker - Full Width Strip */
-  .trust-ticker-wrapper {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%); 
-    background: linear-gradient(90deg,
-      rgba(0,0,0,0) 0%,
-      rgba(255,255,255,0.02) 20%,
-      rgba(255,255,255,0.02) 80%,
-      rgba(0,0,0,0) 100%
-    );
-    border-top: 1px solid rgba(255,255,255,0.05);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    padding: 24px 0;
-    overflow: hidden;
-    position: relative;
-    z-index: 10;
-    backdrop-filter: blur(10px);
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    margin-bottom: 100px;
-  }
+  /* Replaced by TrustTicker.tsx component logic */
 
   .trust-ticker {
     display: flex;

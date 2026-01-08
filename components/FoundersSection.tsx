@@ -32,13 +32,13 @@ export default function FoundersSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-400 mx-auto leading-relaxed"
+            className="hidden md:block text-xl text-gray-400 mx-auto leading-relaxed"
           >
             {CONTENT.founders.desc}
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-24 items-stretch">
           {CONTENT.founders.people.map((founder, index) => (
             <motion.div
               key={founder.name}
@@ -49,27 +49,27 @@ export default function FoundersSection() {
               className="group relative"
             >
               {/* Card Container */}
-              <div className="relative h-full bg-white/5 border border-white/10 rounded-3xl p-10 overflow-hidden hover:border-[var(--gold-rich)]/30 transition-colors duration-500 flex flex-col">
+              <div className="relative h-full bg-white/5 border border-white/10 rounded-3xl p-6 md:p-10 overflow-hidden hover:border-[var(--gold-rich)]/30 transition-colors duration-500 flex flex-col">
                 {/* Hover Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--gold-rich)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
                 {/* Header: Name & Role */}
-                <div className="mb-8">
+                <div className="mb-6 md:mb-8">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="text-4xl font-playfair text-white group-hover:text-[var(--gold-rich)] transition-colors duration-300">
+                    <h3 className="text-3xl md:text-4xl font-playfair text-white group-hover:text-[var(--gold-rich)] transition-colors duration-300">
                       {founder.name}
                     </h3>
-                    <span className="px-4 py-1 rounded-full border border-white/20 text-xs uppercase tracking-widest text-gray-400 group-hover:border-[var(--gold-rich)]/50 group-hover:text-[var(--gold-champagne)] transition-all duration-300">
+                    <span className="px-3 py-1 md:px-4 md:py-1 rounded-full border border-white/20 text-[10px] md:text-xs uppercase tracking-widest text-gray-400 group-hover:border-[var(--gold-rich)]/50 group-hover:text-[var(--gold-champagne)] transition-all duration-300">
                       {founder.bg}
                     </span>
                   </div>
-                  <p className="text-[var(--gold-champagne)] font-medium text-lg border-l-2 border-[var(--gold-rich)] pl-4">
+                  <p className="text-[var(--gold-champagne)] font-medium text-base md:text-lg border-l-2 border-[var(--gold-rich)] pl-4">
                     {founder.role}
                   </p>
                 </div>
 
-                {/* Description */}
-                <p className="text-gray-400 leading-relaxed text-lg mb-8 flex-grow">
+                {/* Description - Simplified on mobile */}
+                <p className="text-gray-400 leading-relaxed text-base md:text-lg mb-8 flex-grow line-clamp-4 md:line-clamp-none">
                   {founder.desc}
                 </p>
 

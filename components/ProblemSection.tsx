@@ -45,7 +45,7 @@ export default function ProblemSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-playfair font-bold mb-12 text-white leading-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-playfair font-bold mb-12 text-white leading-tight">
             {CONTENT.problem.title} <span className="text-[var(--gold-rich)]">{CONTENT.problem.titleHighlight}</span>
           </h2>
           
@@ -75,7 +75,7 @@ export default function ProblemSection() {
             <div className="pt-8 pb-24">
               <Link 
                 href="/contact" 
-                className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg shadow-lg hover:shadow-[var(--gold-rich)]/20 transition-all duration-300"
+                className="main-cta btn-primary inline-flex items-center gap-2 px-8 py-4 text-lg shadow-lg hover:shadow-[var(--gold-rich)]/20 transition-all duration-300"
               >
                 {CONTENT.problem.cta}
               </Link>
@@ -83,8 +83,8 @@ export default function ProblemSection() {
           </div>
         </motion.div>
 
-        {/* Stats Column */}
-        <div className="flex flex-col gap-6">
+        {/* Stats Column - Simplified on mobile */}
+        <div className="flex flex-col gap-4 md:gap-6">
             {/* Stat 1 */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -94,13 +94,13 @@ export default function ProblemSection() {
             className="group relative"
           >
             <div className="absolute inset-0 bg-[var(--gold-rich)]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-2xl hover:border-[var(--gold-rich)]/40 transition-colors duration-300">
-                <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-6xl font-playfair font-bold text-white">
+            <div className="relative bg-white/5 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl hover:border-[var(--gold-rich)]/40 transition-colors duration-300">
+                <div className="flex items-baseline gap-1 mb-1 md:mb-2">
+                    <span className="text-5xl md:text-6xl font-playfair font-bold text-white">
                         <Counter from={0} to={Number(CONTENT.problem.stats.anxiety.value)} />{CONTENT.problem.stats.anxiety.unit}
                     </span>
                 </div>
-                <p className="text-gray-400 text-sm tracking-widest uppercase font-medium border-t border-white/10 pt-4 mt-2">
+                <p className="text-gray-400 text-xs md:text-sm tracking-widest uppercase font-medium border-t border-white/10 pt-3 md:pt-4 mt-2">
                   {CONTENT.problem.stats.anxiety.label}
                 </p>
             </div>

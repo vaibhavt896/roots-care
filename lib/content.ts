@@ -10,8 +10,8 @@ export const CONTENT = {
       "Care management for the parents of global achievers.",
     tagline: "Your success shouldn't cost their comfort.",
     cta: {
-      primary: "Begin Assessment",
-      secondary: "Why Families Choose Us",
+      primary: "Schedule Home Visit",
+      secondary: "See How It Works",
     },
     trust: {
       families: "50+ Families in Kanpur",
