@@ -44,21 +44,21 @@ export default function Header() {
     closed: {
       opacity: 0,
       clipPath: "circle(0% at 100% 0)",
-      transition: { duration: 0.8, ease: "circOut" }
+      transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] }
     },
     open: {
       opacity: 1,
       clipPath: "circle(150% at 100% 0)",
-      transition: { duration: 0.8, ease: "circOut" }
+      transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] }
     }
   };
 
   const linkVariants = {
-    closed: { y: 40, opacity: 0 },
+    closed: { y: 20, opacity: 0 },
     open: (i: number) => ({
       y: 0,
       opacity: 1,
-      transition: { delay: 0.1 + i * 0.1, duration: 0.8, ease: "circOut" }
+      transition: { delay: 0.05 + i * 0.05, duration: 0.4, ease: [0.16, 1, 0.3, 1] }
     })
   };
 
