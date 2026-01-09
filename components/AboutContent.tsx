@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { CONTENT } from "@/lib/content";
 import { useRef } from "react";
 import Image from "next/image";
+import AboutHeroVideo from "./AboutHeroVideo";
 
 // --- Components ---
 
@@ -25,17 +26,7 @@ function AboutHero() {
         style={{ y, opacity }}
         className="absolute inset-0 z-0"
       >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          poster="/video/about-poster.jpg"
-          className="w-full h-full object-cover scale-110" // scale-110 prevents white edges during parallax
-        >
-          <source src="/video/about-hero.mp4" type="video/mp4" />
-        </video>
+        <AboutHeroVideo />
       </motion.div>
 
       {/* Premium Overlay for Text Readability */}
@@ -117,6 +108,7 @@ function StorySegment() {
                 src="/Trustt.png" 
                 alt="Trust and Connection - Holding hands" 
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover scale-105 group-hover:scale-110 transition-transform duration-[2s] ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
@@ -144,6 +136,7 @@ function FounderDeepDive({ name, role, align = "left", bio, quote, imageSrc }: {
              src={imageSrc}
              alt={name}
              fill
+             sizes="(max-width: 1024px) 100vw, 50vw"
              className="object-cover scale-100 group-hover:scale-105 transition-transform duration-[1.5s] ease-out"
            />
            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80" />

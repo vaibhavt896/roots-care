@@ -128,6 +128,7 @@ export default function Header() {
             whileTap={{ scale: 0.85 }}
             className="md:hidden z-50 relative w-12 h-12 flex flex-col items-center justify-center gap-1.5 group rounded-full bg-white/5 border border-white/10 backdrop-blur-md"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             <motion.span
               animate={

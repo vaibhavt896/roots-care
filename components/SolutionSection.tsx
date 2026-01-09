@@ -37,7 +37,7 @@ export default function SolutionSection() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="solution-image-col"
         >
-          <div className="solution-image-wrapper max-h-[400px] md:max-h-none">
+          <div className="solution-image-wrapper max-h-[400px] md:max-h-none aspect-[3/4]">
             <Image
               src="/elder-happy-couple.png"
               alt="Happy elderly couple cared for by Roots & Care"

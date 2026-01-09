@@ -9,6 +9,21 @@ export async function POST(req: Request) {
     const concern = data.get("concern") as string;
     const email = data.get("email") as string;
 
+    // 0. Fail Fast Validation (API Optimization)
+    if (!living || !medical || !concern || !email) {
+      return new Response(JSON.stringify({ success: false, error: "Missing required fields" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return new Response(JSON.stringify({ success: false, error: "Invalid email format" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     // 1. Scoring Logic (Keep existing logic)
     const urgencyScore =
       (living === "alone" ? 2 : 0) +

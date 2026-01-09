@@ -12,7 +12,7 @@ const trustItems = [
 
 export default function TrustTicker() {
   return (
-    <div className="relative w-full max-w-[100vw] bg-black/30 backdrop-blur-sm border-y border-white/5 py-4 overflow-hidden z-20">
+    <div className="relative w-full max-w-[100vw] bg-black/30 backdrop-blur-none md:backdrop-blur-sm border-y border-white/5 py-4 overflow-hidden z-20">
       {/* Gradient Masks for Premium Fade Effect */}
       <div className="absolute top-0 left-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />

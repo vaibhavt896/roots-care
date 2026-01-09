@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import type { Metadata } from "next";
 import LuxuryCursor from "../components/LuxuryCursor";
 import WhatsAppButton from "../components/WhatsAppButton";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 /* 1️⃣ Define fonts (TOP LEVEL, outside component) */
 const playfair = Playfair_Display({
@@ -82,6 +83,14 @@ export default function RootLayout({
   return (
     /* 2️⃣ APPLY FONTS RIGHT HERE */
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
+      <head>
+        {/* LCP Optimization: Preload the hero poster immediately */}
+        <link rel="preload" as="image" href="/video/hero-poster.jpg" />
+        
+        {/* Resource Hints: DNS Prefetch for WhatsApp (Critical Conversion) */}
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="dns-prefetch" href="https://api.whatsapp.com" />
+      </head>
       <body>
         <script
           type="application/ld+json"
@@ -95,6 +104,7 @@ export default function RootLayout({
         </SmoothScroll>
         <WhatsAppButton />
         <LuxuryCursor />
+        <SpeedInsights />
       </body>
     </html>
   );
