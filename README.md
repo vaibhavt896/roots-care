@@ -140,7 +140,7 @@ _Verified via Lighthouse CI and Vercel Speed Insights._
 
 ---
 
-## 🚀 Deploy to Vercel — Recommended Steps
+## Deploy to Vercel — Recommended Steps
 
 1.  Push the `main` branch to GitHub.
 2.  Import repo on Vercel (Framework: Next.js).
@@ -157,9 +157,3 @@ _Verified via Lighthouse CI and Vercel Speed Insights._
 **Project Owner:** Vaibhav Tiwari ([@vaibhavt896](https://github.com/vaibhavt896))  
 **Business:** Roots & Care — [https://roots-care-zeta.vercel.app/]
 **License:** MIT — see [LICENSE](LICENSE) file.
-
----
-
-### Appendix —
-
-- **Product Thinking:** Identified a simple but emotionally acute problem — children abroad, parents alone — and designed a premium product that sells peace of mind through operational discipline, not hollow marketing.
