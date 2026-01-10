@@ -6,8 +6,8 @@ import { useRef } from "react";
 const steps = [
   {
     number: "01",
-    title: "Book a Call",
-    desc: "15-minute video call. We listen. We understand. We assess.",
+    title: "The Discovery Call",
+    desc: "We start by listening. We map out medical history, routines, and the unspoken worries keeping you up at night.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -32,8 +32,8 @@ const steps = [
   },
   {
     number: "02",
-    title: "Meet Your Care Team",
-    desc: "We visit your parents at home. Build trust. Become familiar faces.",
+    title: "The Trust Visit",
+    desc: "We don't send a stranger. We come as friends. We sit down for tea, break the ice, and let your parents get comfortable.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -68,8 +68,8 @@ const steps = [
   },
   {
     number: "03",
-    title: "Care Begins",
-    desc: "Weekly visits. Daily check-ins. Emergency availability. Real-time updates.",
+    title: "The Safety Net Activates",
+    desc: "Routine visits, health monitoring, and home audits start immediately. You get your first detailed Sitrep within 24 hours.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -87,8 +87,8 @@ const steps = [
   },
   {
     number: "04",
-    title: "You Sleep Again",
-    desc: "No more 2 AM anxiety. No more guilt. Just updates, proof, and peace.",
+    title: "Total Visibility",
+    desc: "The distance dissolves. You see what we see. You know they are safe. You focus on your life, knowing we are guarding theirs.",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -117,7 +117,7 @@ export default function HowItWorks() {
   const lineWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={containerRef} className="container how-it-works section-spacing relative !mt-0 !pt-10">
+    <section id="how-it-works" ref={containerRef} className="container how-it-works section-spacing relative !mt-0 !pt-10 scroll-mt-24">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[var(--gold-rich)]/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -129,17 +129,16 @@ export default function HowItWorks() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-3xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-8 leading-tight"
         >
-          From Anxious to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--gold-rich)] to-[var(--gold-champagne)] italic px-2">At Peace</span> in 72 Hours.
+          A System Designed for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--gold-rich)] to-[var(--gold-champagne)] italic px-2">Your Peace of Mind.</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-gray-400 mx-auto text-xl leading-relaxed"
+          className="text-gray-400 mx-auto text-xl leading-relaxed max-w-3xl"
         >
-          A seamless transition from worry to confidence, managed entirely by
-          us.
+          We don&apos;t just react to emergencies. We build a proactive safety net around your parents.
         </motion.p>
       </div>
 

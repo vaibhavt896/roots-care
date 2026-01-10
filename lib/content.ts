@@ -10,7 +10,7 @@ export const CONTENT = {
       "Care management for the parents of global achievers.",
     tagline: "Your success shouldn't cost their comfort.",
     cta: {
-      primary: "Schedule Home Visit",
+      primary: "Book Free 15-Min Call",
       secondary: "See How It Works",
     },
     trust: {
@@ -19,20 +19,20 @@ export const CONTENT = {
     },
   },
   problem: {
-    title: "The Call You Dread",
-    titleHighlight: "at 2 AM",
+    title: "Success Has a Cost.",
+    titleHighlight: "It's Called Distance.",
     scenario: {
       location: "San Francisco",
       time: "2:17 AM",
-      situation: "Your phone vibrates. It's Dad.",
+      situation: "Your phone vibrates. It's a call from home.",
       details:
-        "He's fallen. The help didn't show up. The nearest hospital is 15 minutes away. And you're 8,000 miles away, staring at your screen.",
-      reality: "This isn't a nightmare. This is just Tuesday.",
+        "In that moment, your achievements, your title, your network—none of it matters. You are simply a son who is too far away to help. You have the resources, but you lack the proximity.",
+      reality: "You can send money. But you cannot send presence.",
     },
     emotional:
-      "You chose opportunity over proximity. IIT over staying close. Stanford over being there. Success has a price.",
-    impact: "Now, every notification makes your heart stop.",
-    cta: "Find Peace of Mind",
+      "You chose to build a future. That shouldn't cost you your peace of mind.",
+    impact: "We bridge the gap between your care and their reality.",
+    cta: "Secure Their Comfort",
     stats: {
       anxiety: {
         value: 73,
@@ -54,37 +54,37 @@ export const CONTENT = {
   },
   solution: {
     header: {
-      title: "Not just a service.",
-      subtitle: "We are your local",
-      highlight: "sons and daughters.",
+      title: "We Are The Sons",
+      subtitle: "You Wish You",
+      highlight: "Could Be.",
       desc1:
-        'When you can\'t be there, we step in. Not as "staff" with a checklist, but as family members who care about the little things.',
-      desc2: "We hold their hands at the doctor's. We share a cup of tea. We do what you would do.",
+        "Help is easy to find. Care is rare. We step in as your proxy—managing their life with the same protectiveness you would.",
+      desc2: "We chase the plumber. We question the doctor. We handle the headaches. We do the things a son would do, so you don't have to worry.",
     },
     values: [
       {
         iconPath:
           "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
-        label: "ROOTS",
-        title: "The Plan",
-        desc: "We treat your parents like VIP clients. We handle the logistics so you don't have to.",
-        tag: "Sunit's Focus",
+        label: "ADVOCACY",
+        title: "Your Voice in the Room",
+        desc: "We don't just drive them to the doctor. We sit in the consultation, ask the hard questions, and ensure they get the best possible care.",
+        tag: "Uncompromised Standards",
       },
       {
         iconPath:
           "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z M12 12l.01.01",
-        label: "CARE",
-        title: "Getting It Done",
-        desc: "We handle the daily grind. Checklists, updates, and maintenance. Reliable and consistent.",
-        tag: "Vaibhav's Focus",
+        label: "OPERATIONS",
+        title: "Zero-Friction Living",
+        desc: "From fixing a leaking tap to refilling prescriptions, we remove the friction from their daily lives. A well-run home is a safe home.",
+        tag: "Seamless Execution",
       },
       {
         iconPath:
           "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
-        label: "BROTHERS",
-        title: "Family First",
-        desc: "We aren't gig workers. We are brothers who understand the weight of caring for parents.",
-        tag: "Our Promise",
+        label: "CONNECTION",
+        title: "The Human Element",
+        desc: "Loneliness is the silent killer. We act as companions—a shared cup of tea, a game of chess, a listening ear. We bring life back into the home.",
+        tag: "Genuine Bond",
       },
     ],
   },

@@ -5,6 +5,7 @@ import { motion, useSpring, useMotionValue } from "framer-motion";
 
 export default function LuxuryCursor() {
   const [isHoveringLink, setIsHoveringLink] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
@@ -13,6 +14,11 @@ export default function LuxuryCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    // Only show custom cursor on non-touch devices
+    if (typeof window !== "undefined" && !window.matchMedia("(pointer: coarse)").matches) {
+        setIsVisible(true);
+    }
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX - 16);
       cursorY.set(e.clientY - 16);
@@ -42,8 +48,7 @@ export default function LuxuryCursor() {
     };
   }, [cursorX, cursorY]);
 
-  // Hide cursor on touch devices
-  if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+  if (!isVisible) {
     return null;
   }
 

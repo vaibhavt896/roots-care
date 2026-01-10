@@ -61,7 +61,7 @@ const HeroContent = () => (
       </motion.div>
       <motion.div whileTap={{ scale: 0.96 }} className="w-full md:w-auto">
         <Link 
-          href="/#solution" 
+          href="#how-it-works" 
           className="btn-secondary w-full text-base md:text-lg px-6 py-3.5 md:px-10 md:py-5 backdrop-blur-md bg-white/10 md:bg-white/5 border border-white/20 hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 text-center block"
         >
           {CONTENT.hero.cta.secondary}
