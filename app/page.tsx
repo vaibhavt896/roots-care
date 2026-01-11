@@ -1,14 +1,17 @@
-import FAQ from "../components/FAQ";
-import FinalCTA from "../components/FinalCTA";
-import FoundersSection from "../components/FoundersSection";
+import dynamic from "next/dynamic";
 import HeroSection from "../components/HeroSection";
-import HowItWorks from "../components/HowItWorks";
-import ProblemSection from "../components/ProblemSection";
-import SolutionSection from "../components/SolutionSection";
-import TrustSection from "../components/TrustSection";
 import TrustTicker from "../components/TrustTicker";
 import DailyReportSection from "../components/DailyReportSection";
-import TestimonialSection from "../components/TestimonialSection";
+
+// Lazy load below-the-fold components
+const ProblemSection = dynamic(() => import("../components/ProblemSection"));
+const SolutionSection = dynamic(() => import("../components/SolutionSection"));
+const HowItWorks = dynamic(() => import("../components/HowItWorks"));
+const TrustSection = dynamic(() => import("../components/TrustSection"));
+const FoundersSection = dynamic(() => import("../components/FoundersSection"));
+const TestimonialSection = dynamic(() => import("../components/TestimonialSection"));
+const FAQ = dynamic(() => import("../components/FAQ"));
+const FinalCTA = dynamic(() => import("../components/FinalCTA"));
 
 export const metadata = {
   title: "Trusted Elder Care in Kanpur for NRIs",

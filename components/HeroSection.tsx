@@ -60,12 +60,19 @@ const HeroContent = () => (
         </Link>
       </motion.div>
       <motion.div whileTap={{ scale: 0.96 }} className="w-full md:w-auto">
-        <Link 
+        <a 
           href="#how-it-works" 
-          className="btn-secondary w-full text-base md:text-lg px-6 py-3.5 md:px-10 md:py-5 backdrop-blur-md bg-white/10 md:bg-white/5 border border-white/20 hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 text-center block"
+          onClick={(e) => {
+            e.preventDefault();
+            const element = document.getElementById('how-it-works');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+          className="btn-secondary w-full text-base md:text-lg px-6 py-3.5 md:px-10 md:py-5 backdrop-blur-md bg-white/10 md:bg-white/5 border border-white/20 hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 text-center block cursor-pointer"
         >
           {CONTENT.hero.cta.secondary}
-        </Link>
+        </a>
       </motion.div>
     </motion.div>
 
@@ -99,34 +106,23 @@ export default function HeroSection() {
   return (
     <section ref={containerRef} className="relative w-full h-[100dvh] overflow-hidden flex items-center">
       
-      {/* --- DESKTOP BACKGROUND (Parallax) --- */}
+      {/* --- UNIFIED BACKGROUND (Video + Parallax) --- */}
       <motion.div 
         style={{ scale }} 
-        className="absolute inset-0 z-0 hidden md:block"
+        className="absolute inset-0 z-0"
       >
         <HeroVideo />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 z-10" />
+        {/* Responsive Gradient Overlay: Vertical for Mobile, Horizontal for Desktop */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/50 to-black/80 md:bg-gradient-to-r md:from-black/90 md:via-black/50 md:to-transparent" />
       </motion.div>
 
-      {/* --- MOBILE BACKGROUND (Static, No Parallax) --- */}
-      <div className="absolute inset-0 z-0 md:hidden block">
-        <HeroVideo />
-        {/* Mobile Gradient: Top-down for better text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 z-10" />
-      </div>
-
-      {/* --- DESKTOP CONTAINER (Parallax) --- */}
+      {/* --- UNIFIED CONTENT CONTAINER (Parallax) --- */}
       <motion.div 
         style={{ y, opacity }} 
-        className="hidden md:flex container relative z-20 px-4 md:px-6 pb-16 pt-20 flex-col justify-center h-full"
+        className="flex container relative z-20 px-4 md:px-6 pb-16 pt-20 flex-col justify-center h-full"
       >
         <HeroContent />
       </motion.div>
-
-      {/* --- MOBILE CONTAINER (Static) --- */}
-      <div className="flex md:hidden container relative z-20 px-4 md:px-6 pb-16 pt-20 flex-col justify-center h-full">
-        <HeroContent />
-      </div>
 
     </section>
   );
